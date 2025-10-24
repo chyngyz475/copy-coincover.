@@ -1,0 +1,67 @@
+/* Mobile Hero Styles - 390-450px */
+.mobile-hero {
+  padding: 40px 16px;
+  background: linear-gradient(#0E171B);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-hero__container {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.mobile-hero__content {
+  text-align: left;
+}
+
+.mobile-hero__title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #0E171B;
+  margin-bottom: 16px;
+}
+
+.mobile-hero__title-accent {
+  color: white;
+}
+
+.mobile-hero__description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: white;
+  margin-bottom: 32px;
+}
+
+.mobile-hero__actions {
+  display: flex;
+  gap: 12px;
+}
+
+.mobile-hero__cta {
+  min-width: 160px;
+}
+
+/* Адаптивность для разных мобильных размеров */
+@media (min-width: 400px) {
+  .mobile-hero__title {
+    font-size: 36px;
+  }
+  
+  .mobile-hero__description {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 450px) {
+  .mobile-hero__title {
+    font-size: 40px;
+  }
+  
+  .mobile-hero__description {
+    font-size: 18px;
+  }
+}

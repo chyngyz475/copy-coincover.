@@ -1,0 +1,108 @@
+/* Mobile Risks Styles - 390-450px */
+.mobile-risks {
+  padding: 40px 16px;
+  background: #f8fafc;
+}
+
+.mobile-risks__container {
+  max-width: 390px;
+  margin: 0 auto;
+}
+
+.mobile-risks__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0E171B;
+  text-align: center;
+  margin-bottom: 32px;
+  line-height: 1.3;
+}
+
+.mobile-risks__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.mobile-risks__card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px 20px;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.mobile-risks__card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: #3939ef;
+}
+
+.mobile-risks__icon {
+  font-size: 32px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.mobile-risks__card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0E171B;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.mobile-risks__description {
+  font-size: 14px;
+  color: #6e737c;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.mobile-risks__learn-more {
+  background: transparent;
+  color: #3939ef;
+  border: 1px solid #3939ef;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mobile-risks__learn-more:hover {
+  background: #3939ef;
+  color: #ffffff;
+}
+
+/* Адаптивность для разных мобильных размеров */
+@media (min-width: 400px) {
+  .mobile-risks__title {
+    font-size: 26px;
+  }
+  
+  .mobile-risks__card-title {
+    font-size: 19px;
+  }
+  
+  .mobile-risks__description {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 450px) {
+  .mobile-risks__title {
+    font-size: 28px;
+  }
+  
+  .mobile-risks__card-title {
+    font-size: 20px;
+  }
+  
+  .mobile-risks__description {
+    font-size: 16px;
+  }
+}

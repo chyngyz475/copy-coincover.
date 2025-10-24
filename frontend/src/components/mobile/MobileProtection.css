@@ -1,0 +1,124 @@
+/* Mobile Protection Styles - 390-450px */
+.mobile-protection {
+  padding: 40px 16px;
+  background: #ffffff;
+}
+
+.mobile-protection__container {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.mobile-protection__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0E171B;
+  text-align: center;
+  margin-bottom: 24px;
+  line-height: 1.3;
+}
+
+.mobile-protection__navigation {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.mobile-protection__nav-dots {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+  color: #6e737c;
+}
+
+.mobile-protection__nav-arrow {
+  font-size: 18px;
+  color: #6e737c;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.mobile-protection__nav-arrow:hover {
+  color: #3939ef;
+}
+
+.mobile-protection__nav-counter {
+  font-weight: 600;
+}
+
+.mobile-protection__card {
+  background: linear-gradient(135deg, #e8f2ff 0%, #f0f8ff 100%);
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  border: 2px dashed #d1d5db;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mobile-protection__card-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+}
+
+.mobile-protection__pattern-dots {
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, #6e737c 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+.mobile-protection__card-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.mobile-protection__card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0E171B;
+  line-height: 1.4;
+  flex: 1;
+  margin-right: 16px;
+}
+
+.mobile-protection__card-icon {
+  font-size: 24px;
+  color: #6e737c;
+  font-weight: 300;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* Адаптивность для разных мобильных размеров */
+@media (min-width: 400px) {
+  .mobile-protection__title {
+    font-size: 26px;
+  }
+  
+  .mobile-protection__card-title {
+    font-size: 19px;
+  }
+}
+
+@media (min-width: 450px) {
+  .mobile-protection__title {
+    font-size: 28px;
+  }
+  
+  .mobile-protection__card-title {
+    font-size: 20px;
+  }
+}

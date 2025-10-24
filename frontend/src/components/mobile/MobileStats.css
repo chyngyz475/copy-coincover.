@@ -1,0 +1,60 @@
+/* Mobile Stats Styles - 390-450px */
+.mobile-stats {
+  background: #0E171B;
+  color: #ffffff;
+  padding: 40px 16px;
+}
+
+.mobile-stats__container {
+  max-width: 390px;
+  margin: 0 auto;
+}
+
+.mobile-stats__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.mobile-stats__item {
+  text-align: center;
+  padding: 20px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-stats__number {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+  line-height: 1.1;
+}
+
+.mobile-stats__label {
+  font-size: 14px;
+  color: #6e737c;
+  line-height: 1.4;
+}
+
+/* Адаптивность для разных мобильных размеров */
+@media (min-width: 400px) {
+  .mobile-stats__number {
+    font-size: 36px;
+  }
+  
+  .mobile-stats__label {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 450px) {
+  .mobile-stats__number {
+    font-size: 40px;
+  }
+  
+  .mobile-stats__label {
+    font-size: 16px;
+  }
+}

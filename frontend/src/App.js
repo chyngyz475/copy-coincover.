@@ -1,20 +1,9 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import Header from './components/Header/Header';
-import AppRoutes from './pages/Routes';
+import MobileHome from './components/mobile/MobileHome';
+import './components/mobile/MobileHome.css';
 
 function App() {
-  return (
-    <BrowserRouter>
-      <div className="flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-grow">
-          <AppRoutes />
-        </main>
-       
-      </div>
-    </BrowserRouter>
-  );
+  return <MobileHome />;
 }
 
 export default App;

@@ -1,0 +1,62 @@
+/* Mobile Lost Access Styles - 390-450px */
+.mobile-lost-access {
+  padding: 40px 16px;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.mobile-lost-access__container {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.mobile-lost-access__card {
+  background: linear-gradient(135deg, #e8f2ff 0%, #f0f8ff 100%);
+  border-radius: 20px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(57, 57, 239, 0.1);
+}
+
+.mobile-lost-access__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0E171B;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.mobile-lost-access__description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #6e737c;
+  margin-bottom: 24px;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mobile-lost-access__cta {
+  min-width: 140px;
+}
+
+/* Адаптивность для разных мобильных размеров */
+@media (min-width: 400px) {
+  .mobile-lost-access__title {
+    font-size: 26px;
+  }
+  
+  .mobile-lost-access__description {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 450px) {
+  .mobile-lost-access__title {
+    font-size: 28px;
+  }
+  
+  .mobile-lost-access__description {
+    font-size: 18px;
+  }
+}

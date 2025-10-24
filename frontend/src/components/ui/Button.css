@@ -1,0 +1,252 @@
+/* Button Component Styles - Mobile 390-450px */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.button:focus {
+  outline: 2px solid #3939ef;
+  outline-offset: 2px;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Variants */
+.button--primary {
+  background: #0E171B;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(14, 23, 27, 0.2);
+}
+
+.button--primary:hover:not(:disabled) {
+  background: #3939ef;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(14, 23, 27, 0.3);
+}
+
+.button--secondary {
+  background: transparent;
+  color: #3939ef;
+  border: 1px solid #3939ef;
+}
+
+.button--secondary:hover:not(:disabled) {
+  background: #3939ef;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.button--cta {
+  background: #3939ef;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(57, 57, 239, 0.3);
+}
+
+.button--cta:hover:not(:disabled) {
+  background: #2d2df3;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(57, 57, 239, 0.4);
+}
+
+.button--white {
+  background: #ffffff;
+  color: #3939ef;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.button--white:hover:not(:disabled) {
+  background: #f8f9fa;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Sizes */
+.button--small {
+  padding: 8px 16px;
+  font-size: 12px;
+  min-height: 32px;
+}
+
+.button--medium {
+  padding: 12px 20px;
+  font-size: 14px;
+  min-height: 40px;
+}
+
+.button--large {
+  padding: 16px 24px;
+  font-size: 16px;
+  min-height: 48px;
+}
+
+.button--xlarge {
+  padding: 18px 32px;
+  font-size: 18px;
+  min-height: 56px;
+}
+
+/* Mobile specific optimizations */
+@media (max-width: 450px) {
+  .button--small {
+    padding: 6px 12px;
+    font-size: 11px;
+    min-height: 28px;
+  }
+  
+  .button--medium {
+    padding: 10px 16px;
+    font-size: 13px;
+    min-height: 36px;
+  }
+  
+  .button--large {
+    padding: 14px 20px;
+    font-size: 15px;
+    min-height: 44px;
+  }
+  
+  .button--xlarge {
+    padding: 16px 28px;
+    font-size: 16px;
+    min-height: 52px;
+  }
+}
+
+/* Ripple effect */
+.button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.button:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Icon support */
+.button .button__icon {
+  margin-right: 8px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.button .button__icon:last-child {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+/* Full width variant */
+.button--full {
+  width: 100%;
+}
+
+/* Loading state */
+.button--loading {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.button--loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Hover icon */
+.button__hover-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  pointer-events: none;
+  animation: hoverIconAppear 0.2s ease-out;
+}
+
+.button__hover-icon-img {
+  width: 44px;
+  height: 44px;
+  opacity: 0.8;
+}
+
+@keyframes hoverIconAppear {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Click icon */
+.button__click-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  pointer-events: none;
+  animation: clickIconAppear 0.3s ease-out;
+}
+
+.button__click-icon-img {
+  width: 44px;
+  height: 44px;
+  opacity: 0.9;
+}
+
+@keyframes clickIconAppear {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Clicked state */
+.button--clicked {
+  transform: scale(0.98);
+  transition: transform 0.1s ease;
+}

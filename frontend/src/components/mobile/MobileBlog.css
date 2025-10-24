@@ -1,0 +1,136 @@
+/* Mobile Blog Styles - 390-450px */
+.mobile-blog {
+  padding: 40px 16px;
+  background: #ffffff;
+}
+
+.mobile-blog__container {
+  max-width: 390px;
+  margin: 0 auto;
+}
+
+.mobile-blog__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.mobile-blog__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0E171B;
+  margin: 0;
+}
+
+.mobile-blog__see-all {
+  color: #3939ef;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.mobile-blog__see-all:hover {
+  color: #2d2df3;
+}
+
+.mobile-blog__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.mobile-blog__card {
+  background: #f8fafc;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.mobile-blog__card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: #3939ef;
+}
+
+.mobile-blog__image {
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+}
+
+.mobile-blog__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.mobile-blog__card:hover .mobile-blog__image img {
+  transform: scale(1.05);
+}
+
+.mobile-blog__content {
+  padding: 16px;
+}
+
+.mobile-blog__card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0E171B;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.mobile-blog__card-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.mobile-blog__card-title a:hover {
+  color: #3939ef;
+}
+
+.mobile-blog__read-more {
+  color: #3939ef;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.mobile-blog__read-more:hover {
+  color: #2d2df3;
+}
+
+/* Адаптивность для разных мобильных размеров */
+@media (min-width: 400px) {
+  .mobile-blog__title {
+    font-size: 22px;
+  }
+  
+  .mobile-blog__card-title {
+    font-size: 15px;
+  }
+  
+  .mobile-blog__read-more {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 450px) {
+  .mobile-blog__title {
+    font-size: 24px;
+  }
+  
+  .mobile-blog__card-title {
+    font-size: 16px;
+  }
+  
+  .mobile-blog__read-more {
+    font-size: 14px;
+  }
+}
