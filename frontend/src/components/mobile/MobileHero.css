@@ -1,6 +1,6 @@
 /* Mobile Hero Styles - 390-450px */
 .mobile-hero {
-  padding: 40px 16px;
+    padding: 40px 16px;
   background: linear-gradient(#0E171B);
   min-height: 100vh;
   display: flex;

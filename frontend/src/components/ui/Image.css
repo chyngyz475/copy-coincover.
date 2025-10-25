@@ -1,0 +1,115 @@
+/* Image Component Styles */
+.image__wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Variants */
+.image--default {
+  border-radius: 0;
+}
+
+.image--rounded {
+  border-radius: 8px;
+}
+
+.image--circle {
+  border-radius: 50%;
+}
+
+.image--pill {
+  border-radius: 9999px;
+}
+
+/* Sizes */
+.image--small {
+  max-width: 24px;
+  max-height: 24px;
+}
+
+.image--medium {
+  max-width: 48px;
+  max-height: 48px;
+}
+
+.image--large {
+  max-width: 96px;
+  max-height: 96px;
+}
+
+.image--xlarge {
+  max-width: 128px;
+  max-height: 128px;
+}
+
+/* States */
+.image--loading {
+  opacity: 0;
+}
+
+.image--error {
+  opacity: 0.5;
+  filter: grayscale(100%);
+}
+
+.image__loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.image__spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f3f4f6;
+  border-top: 2px solid #3939ef;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Hover effects */
+.image__wrapper:hover .image {
+  transform: scale(1.05);
+}
+
+.image__wrapper:hover .image--error {
+  transform: scale(1);
+}
+
+/* Mobile responsive */
+@media (max-width: 450px) {
+  .image--small {
+    max-width: 20px;
+    max-height: 20px;
+  }
+  
+  .image--medium {
+    max-width: 40px;
+    max-height: 40px;
+  }
+  
+  .image--large {
+    max-width: 80px;
+    max-height: 80px;
+  }
+  
+  .image--xlarge {
+    max-width: 100px;
+    max-height: 100px;
+  }
+}

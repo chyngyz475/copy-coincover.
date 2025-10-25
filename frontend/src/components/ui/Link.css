@@ -1,0 +1,95 @@
+/* Link Component Styles */
+.link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* Variants */
+.link--default {
+  color: #3939ef;
+  text-decoration: underline;
+}
+
+.link--default:hover {
+  color: #2d2df3;
+  text-decoration: none;
+}
+
+.link--primary {
+  color: #3939ef;
+  font-weight: 600;
+}
+
+.link--primary:hover {
+  color: #2d2df3;
+}
+
+.link--secondary {
+  color: #6e737c;
+}
+
+.link--secondary:hover {
+  color: #3939ef;
+}
+
+.link--white {
+  color: white;
+}
+
+.link--white:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.link--dark {
+  color: #0E171B;
+}
+
+.link--dark:hover {
+  color: #3939ef;
+}
+
+/* Sizes */
+.link--small {
+  font-size: 14px;
+}
+
+.link--medium {
+  font-size: 16px;
+}
+
+.link--large {
+  font-size: 18px;
+}
+
+/* States */
+.link--disabled {
+  color: #9ca3af;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.link--disabled:hover {
+  color: #9ca3af;
+  text-decoration: none;
+}
+
+/* Mobile responsive */
+@media (max-width: 450px) {
+  .link--small {
+    font-size: 13px;
+  }
+  
+  .link--medium {
+    font-size: 15px;
+  }
+  
+  .link--large {
+    font-size: 17px;
+  }
+}

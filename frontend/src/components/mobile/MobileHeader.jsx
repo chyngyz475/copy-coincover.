@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import Button from '../ui/Button';
+import Link from '../ui/Link';
+import Icon from '../ui/Icon';
+import { navigationConfig, getLinkProps } from '../../config/navigation';
 import './MobileHeader.css';
 
 const MobileHeader = () => {
@@ -20,99 +23,7 @@ const MobileHeader = () => {
     }));
   };
 
-  const navigationItems = [
-    {
-      title: 'For institutions',
-      href: null,
-      hasSubmenu: true,
-      submenu: [
-        {
-          title: 'Products',
-          items: [
-            { title: 'CoinCover Recover for Institutions', href: 'https://www.coincover.com/products/recover-for-institutions' },
-            { title: 'CoinCover Protect', href: 'https://www.coincover.com/products/protect' },
-            { title: 'CoinCover Recover', href: 'https://www.coincover.com/products/recover' }
-          ]
-        },
-        {
-          title: 'Solutions',
-          items: [
-            { title: 'Exchanges', href: 'https://www.coincover.com/solutions/exchanges' },
-            { title: 'Financial institutions', href: 'https://www.coincover.com/solutions/financial-institutions' },
-            { title: 'Wallets', href: 'https://www.coincover.com/solutions/wallets' }
-          ]
-        },
-        {
-          title: 'Risks we protect against',
-          items: [
-            { title: 'Lost wallet access', href: 'https://www.coincover.com/risks/lost-wallet-access' },
-            { title: 'Crypto fraud', href: 'https://www.coincover.com/risks/crypto-fraud' }
-          ]
-        }
-      ]
-    },
-    {
-      title: 'For people',
-      href: null,
-      hasSubmenu: true,
-      submenu: [
-        {
-          title: 'Products',
-          items: [
-            { title: 'What is CoinCover Recover?', href: 'https://www.coincover.com/consumers/products/recover' },
-            { title: 'What is CoinCover Protect?', href: 'https://www.coincover.com/consumers/products/protect' }
-          ]
-        },
-        {
-          title: 'Risks we protect against',
-          items: [
-            { title: 'Lost wallet access', href: 'https://www.coincover.com/consumers/risks/lost-access' },
-            { title: 'Crypto fraud', href: 'https://www.coincover.com/consumers/risks/crypto-fraud' }
-          ]
-        }
-      ]
-    },
-    {
-      title: 'Knowledge Hub',
-      href: null,
-      hasSubmenu: true,
-      submenu: [
-        {
-          title: 'Resources',
-          items: [
-            { title: 'Developer portal', href: 'https://developer.coincover.com/' },
-            { title: 'Trust Center', href: 'https://app.eu.vanta.com/coincover/trust/z6bu6okf6urtu438efcwz' },
-            { title: 'Assets we protect', href: 'https://www.coincover.com/knowledge-hub/assets-we-protect' },
-            { title: 'Crypto FAQs', href: 'https://www.coincover.com/knowledge-hub/faqs' },
-            { title: 'Glossary', href: 'https://www.coincover.com/knowledge-hub/glossary' }
-          ]
-        },
-        {
-          title: 'Partners',
-          items: [
-            { title: 'Partner directory', href: 'https://www.coincover.com/partners/partner-directory' }
-          ]
-        },
-        {
-          title: 'Insight',
-          items: [
-            { title: 'Blog', href: 'https://www.coincover.com/blog' },
-            { title: 'The Trust Factor', href: 'https://www.coincover.com/knowledge-hub/reports/the-trust-factor' }
-          ]
-        }
-      ]
-    },
-    {
-      title: 'About us',
-      href: 'https://www.coincover.com/about',
-      hasSubmenu: false
-    },
-    {
-      title: 'Contact us',
-      href: 'https://www.coincover.com/contact',
-      hasSubmenu: false
-    }
-  ];
+  const navigationItems = navigationConfig.main;
 
   return (
     <>
@@ -121,30 +32,19 @@ const MobileHeader = () => {
         <div className="mobile-notification-banner__content">
           <div className="mobile-notification-banner__marquee">
             {[...Array(3)].map((_, index) => (
-              <a
+              <Link
                 key={index}
                 href="https://www.coincover.com/blog/beware-of-fraudsters-impersonating-coincover"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mobile-notification-banner__link"
+                variant="white"
               >
                 <span className="mobile-notification-banner__text">
                   Beware of fraudsters impersonating CoinCover. We will never cold-call you and ask for your personal information. Read more here.
                 </span>
-                <svg
-                  width="20"
-                  height="21"
-                  viewBox="0 0 20 21"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="mobile-notification-banner__icon"
-                >
-                  <path
-                    d="M9.9987 3.83203L8.8237 5.00703L13.4737 9.66536H3.33203V11.332H13.4737L8.8237 15.9904L9.9987 17.1654L16.6654 10.4987L9.9987 3.83203Z"
-                    fill="white"
-                  />
-                </svg>
-              </a>
+                <Icon name="arrow-right" size="small" color="white" />
+              </Link>
             ))}
           </div>
         </div>
@@ -174,11 +74,11 @@ const MobileHeader = () => {
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
-            <span className={`mobile-header__hamburger ${isMenuOpen ? 'active' : ''}`}>
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
+            <Icon 
+              name={isMenuOpen ? 'close' : 'menu'} 
+              size="medium" 
+              color="white"
+            />
           </button>
         </div>
 
@@ -194,16 +94,12 @@ const MobileHeader = () => {
                       onClick={() => toggleSubmenu(item.title)}
                     >
                       <span>{item.title}</span>
-                      <svg 
-                        width="16" 
-                        height="16" 
-                        viewBox="0 0 16 16" 
-                        fill="none" 
-                        xmlns="http://www.w3.org/2000/svg"
+                      <Icon 
+                        name="arrow-down" 
+                        size="small" 
+                        color="white"
                         className={`mobile-menu__expand-icon ${expandedItems[item.title] ? 'expanded' : ''}`}
-                      >
-                        <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
+                      />
                     </button>
                     
                     {expandedItems[item.title] && (
@@ -214,13 +110,18 @@ const MobileHeader = () => {
                             <ul className="mobile-menu__submenu-list">
                               {submenu.items.map((subItem, subItemIndex) => (
                                 <li key={subItemIndex} className="mobile-menu__submenu-item">
-                                  <a 
+                                  <Link 
                                     href={subItem.href} 
                                     className="mobile-menu__submenu-link"
                                     onClick={() => setIsMenuOpen(false)}
+                                    {...getLinkProps(subItem.href, subItem.external)}
+                                    variant="secondary"
                                   >
                                     {subItem.title}
-                                  </a>
+                                    {subItem.external && (
+                                      <Icon name="external-link" size="small" color="currentColor" />
+                                    )}
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
@@ -230,13 +131,15 @@ const MobileHeader = () => {
                     )}
                   </div>
                 ) : (
-                  <a 
+                  <Link 
                     href={item.href} 
                     className="mobile-menu__item"
                     onClick={() => setIsMenuOpen(false)}
+                    {...getLinkProps(item.href)}
+                    variant="white"
                   >
                     {item.title}
-                  </a>
+                  </Link>
                 )}
               </div>
             ))}
